@@ -19,10 +19,6 @@ class TestIncrementDigits(unittest.TestCase):
 		self.assertEqual(howManyDigits(123), 3)
 		self.assertEqual(howManyDigits(0), 1)
 
-	def test_incrementDigit(self):
-		self.assertEqual(incrementDigit(0), 1)
-		self.assertEqual(incrementDigit(9), 10)
-
 	def test_splitNumToArrayOfDigits(self):
 		self.assertEqual(splitNumToArrayOfDigits(0), [0])
 		self.assertEqual(splitNumToArrayOfDigits(1), [1])
@@ -37,7 +33,5 @@ class TestIncrementDigits(unittest.TestCase):
 		self.assertEqual(coalesceListToNumber([9,9]), 1010)
 		self.assertEqual(coalesceListToNumber([9,9,8]), 10109)
 		
-
-
 if (__name__ == '__main__'):
 	unittest.main()
