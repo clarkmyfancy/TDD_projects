@@ -27,9 +27,6 @@ def howManyDigits(x):
 		numDigits += 1
 	return numDigits
 
-def incrementDigit(x):
-	return x+1
-
 def splitNumToArrayOfDigits(x):
 	if x == 0:
 		return [0]
@@ -47,7 +44,7 @@ def coalesceListToNumber(inputList):
 	inputList = inputList[::-1]
 	multiplier = 1
 	for x in inputList:
-		coalescedNumber += incrementDigit(x)*multiplier
+		coalescedNumber += (x+1) * multiplier
 		if x == 9:
 			multiplier *= 100
 		else:
@@ -61,8 +58,6 @@ def main():
 	incrementedNumber = coalesceListToNumber(digitsFromUserInput)
 	print(incrementedNumber)
 
-
 if __name__ == '__main__':
 	main()
-
-
+	
