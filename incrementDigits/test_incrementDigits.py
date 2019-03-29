@@ -10,6 +10,11 @@ class TestIncrementDigits(unittest.TestCase):
 	def tearDown(self):
 		pass
 
+	def test_isInvalidInput(self):
+		self.assertEqual(isInvalidInput(-0), False)
+		self.assertEqual(isInvalidInput(-1), True)
+		self.assertEqual(isInvalidInput("afesg"), True)
+
 	def test_howManyDigits(self):
 		self.assertEqual(howManyDigits(123), 3)
 		self.assertEqual(howManyDigits(0), 1)
@@ -31,14 +36,7 @@ class TestIncrementDigits(unittest.TestCase):
 		self.assertEqual(coalesceListToNumber([1,0]), 21)
 		self.assertEqual(coalesceListToNumber([9,9]), 1010)
 		self.assertEqual(coalesceListToNumber([9,9,8]), 10109)
-
-
-
-	# def test_getNumberFromUser(self):
-
-	# 	# since the console input on this is not installed yet, will make a dummy input
-	# 	self.assertIsNotNone(getNumberFromUser())
-
+		
 
 
 if (__name__ == '__main__'):

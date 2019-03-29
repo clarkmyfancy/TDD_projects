@@ -1,9 +1,23 @@
-def getNumberFromUser():
-	userInput = input("Enter a number")
-	return userInput
+def getStringFromUserAndCastToInt():
+	userInput = raw_input("Enter a number: ")
+	if isInvalidInput(userInput):
+		userInput = getStringFromUserAndCastToInt()
+	return int(userInput)
 
+def isInvalidInput(x):
+	try: 
+		newInput = int(x)
+		print(newInput)
+		if newInput < 0:
+			print("Input should a positive number.")
+			return True
+		return False
+	except:
+		print("Input should a positive number.")
+		return True
 
 def howManyDigits(x):
+	x = abs(x)
 	if x == 0:
 		return 1
 
@@ -24,6 +38,7 @@ def splitNumToArrayOfDigits(x):
 	for i in range(0, numDigits):
 		lastDigit = x%10
 		x //= 10
+		x == 0
 		individualDigits.append(lastDigit)
 	return individualDigits[::-1]
 
@@ -41,15 +56,13 @@ def coalesceListToNumber(inputList):
 	return coalescedNumber
 
 def main():
-	userInput = getNumberFromUser()
+	userInput = getStringFromUserAndCastToInt()
 	digitsFromUserInput = splitNumToArrayOfDigits(userInput)
 	incrementedNumber = coalesceListToNumber(digitsFromUserInput)
 	print(incrementedNumber)
 
+
 if __name__ == '__main__':
 	main()
-
-
-
 
 
