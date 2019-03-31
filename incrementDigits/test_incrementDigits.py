@@ -21,9 +21,7 @@ class TestIncrementDigits(unittest.TestCase):
 
 	def test_splitNumToArrayOfDigits(self):
 		self.assertEqual(splitNumToArrayOfDigits(0), [0])
-		self.assertEqual(splitNumToArrayOfDigits(1), [1])
 		self.assertEqual(splitNumToArrayOfDigits(10), [1,0])
-		self.assertEqual(splitNumToArrayOfDigits(1123413240), [1,1,2,3,4,1,3,2,4,0])
 		self.assertEqual(splitNumToArrayOfDigits(1000000000), [1,0,0,0,0,0,0,0,0,0])
 
 	def test_coalesceListToNumber(self):
